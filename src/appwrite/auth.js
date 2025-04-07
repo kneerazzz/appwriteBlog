@@ -8,6 +8,7 @@ export class AuthService {
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectID);
+            .setScope(['account'])
 
         this.account = new Account(this.client);
 
