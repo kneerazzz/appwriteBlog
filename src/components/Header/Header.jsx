@@ -16,7 +16,7 @@ export default function Header() {
         },
         {
             name: "Login",
-            slug: "/Login",
+            slug: "/login",
             active: !authStatus,
         },
         {

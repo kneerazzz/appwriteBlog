@@ -36,12 +36,12 @@ export default function PostForm({post}){
             const file  = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null
 
             if(file) {
-                const fileId = file.$id
-                data.featuredImage = fileId
+                const fileId = file.$id;
+                data.featuredImage = fileId;
                 const dbPost = await appwriteService.createPost({
                     ...data,
-                    slug: slugTransform(data.title),
                     userId: userData.$id
+                    
                 })
                 if(dbPost){
                     navigate(`/post/${dbPost.$id}`)
